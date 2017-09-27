@@ -1,0 +1,13 @@
+path:
+  data: /data/elasticsearch/data
+  logs: /data/elasticsearch/logs
+
+node:
+  name: elasticsearch.mgr.suse.de
+
+network:
+  host: 0.0.0.0
+
+# elasticsearch-head needs CORS
+http.cors.enabled : true
+http.cors.allow-origin : "*"
