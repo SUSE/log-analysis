@@ -16,6 +16,14 @@ This directory should be copied to your ``srv/salt`` hierarchy as
 The file pathes within init.sls depend on this. Feel free to change
 this as you see fit.
 
+### Dependencies
+
+Logstash needs access to Elasticsearch. This dependency is explicit in
+the salt state.
+If you're not running Elasticsearch from the provided Dockerfile,
+please adapt ``salt/init.sls`` accordingly.
+
+
 ## Node name
 
 Check ``init.sls`` and ``config/elasticsearch.yml`` for the node name.
