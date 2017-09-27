@@ -1,0 +1,6 @@
+# borrowing from rhn_web_api.pattern
+APITIMESTAMP [-\d]+\s[:\d,]+
+APICOMPONENT .+
+EXCEPTION [\w\.]+Exception
+
+RHN_WEB_UI (%{APITIMESTAMP:timestamp}\s\[%{APICOMPONENT:component}\]\s%{LOGLEVEL:loglevel}\s+%{API:api}\s-\s(%{REASON:reason})?)|((Caused by: )?%{EXCEPTION:exception}(: %{REASON:reason})?)

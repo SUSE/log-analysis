@@ -1,0 +1,12 @@
+# osa-dispatcher
+# 2015/06/12 11:39:04 +02:00 14117 0.0.0.0: osad/jabber_lib.main('ERROR', 'Error caught:')
+
+TIMESTAMP \d\d\d\d\/\d\d\/\d\d\s\d\d:\d\d:\d\d\s[+-]\d\d:\d\d
+PID [\d]+
+MODULE \w+
+FUNCTION [\w_\.]+
+
+# see RHNARGS
+OSAARGS [^\)]*
+
+OSA_DISPATCHER %{TIMESTAMP:timestamp} %{PID:pid:int} %{IP:clientip}: %{MODULE:module}/%{FUNCTION:function}(\(%{OSAARGS:args}\))?

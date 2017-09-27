@@ -1,0 +1,2 @@
+# Apache access.log
+ACCESS_LOG %{HTTPD_COMMONLOG}( %{QUOTEDSTRING:referer})?( %{QUOTEDSTRING:agent})?

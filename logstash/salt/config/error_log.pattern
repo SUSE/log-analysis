@@ -1,0 +1,9 @@
+# Apache error.log
+# copied from HTTPD24_ERRORLOG
+REASON [\-\w\d\s\.\:\(\)/'"!=,\[\]\<\>\$]+
+PIDTID \[pid %{POSINT:pid:int}(:tid %{NUMBER:tid:int})?\]
+PROXY24 \s\(%{POSINT:proxy_errorcode}\)%{DATA:proxy_message}:
+MANAGER \sSUSE\sManager\s%{POSINT}\s\d\d\d\d/\d\d/\d\d\s\d\d:\d\d:\d\d\s[-+]\d\d:\d\d
+CLIENT24 \s\[client %{IPORHOST:clientip}:%{POSINT:clientport}\]
+TRACEBACK \s\(most recent call last\)
+ERROR_LOG \[%{HTTPDERROR_DATE:timestamp}\]\s\[(%{WORD:module})?:%{LOGLEVEL:loglevel}\]\s%{PIDTID}(%{PROXY24}|%{MANAGER})?(%{CLIENT24})?(\s%{WORD:errorcode})?(\s\(pid=%{POSINT}\))?(\s\(most recent call last\))?((:\s%{REASON:reason})|(\s\s\s%{REASON:traceback}))?

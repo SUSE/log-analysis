@@ -1,0 +1,4 @@
+path.data: /data/logstash/data
+path.queue: /data/logstash/data/queue
+path.config: /data/logstash/config/*.conf
+path.logs: /data/logstash/log

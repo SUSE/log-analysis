@@ -1,0 +1,1 @@
+RHN_SERVER_SAT %{TIMESTAMP:timestamp} %{PID:pid:int} %{IP:clientip}: %{MODULE:module}/%{FUNCTION:function}(\(%{OSAARGS:args}\))?

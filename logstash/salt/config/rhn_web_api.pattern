@@ -1,0 +1,11 @@
+API [\w\.]+
+
+# see OSAARGS
+RHNARGS (\'[^\']*\'|\"[^\"]*\"|[\w\d,\s\._\[\]\{\}\<\>\*\?\"/=:-])*
+DURATION (TIME): %{BASE10NUM:duration:float} (seconds)
+
+COMPONENT [\w\-[0-9]]+
+
+RHNTIMESTAMP [\d:\s,-]+
+
+RHN_WEB_API \[%{RHNTIMESTAMP:timestamp}\] (\[%{COMPONENT:component}\]\s )?%{LOGLEVEL:loglevel}\s+((- REQUESTED FROM: %{IP:clientip} CALL: %{API:api}(\(%{RHNARGS:args}(\))?)?( CALLER: \(%{API:caller}\))?( %{DURATION})?(%{REASON:reason})?)|(- postProcess error)|(%{API:api}\s-\s%{DATA:reason}))
